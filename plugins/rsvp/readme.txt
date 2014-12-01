@@ -3,8 +3,8 @@ Contributors: mdedev
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mikede%40mde%2ddev%2ecom&lc=US&item_name=Wordpress%20RSVP%20Plugin&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest
 Tags: rsvp, reserve, wedding, guestlist
 Requires at least: 3.0
-Tested up to: 4.0.0
-Stable tag: 1.9.2
+Tested up to: 4.0.1
+Stable tag: 1.9.5
 
 Easy to use rsvp plugin originally created for weddings but could be used for other events.
 
@@ -17,6 +17,8 @@ in existing plugins was:
 * Required people to remember/know some special knowledge (a code, a zipcode, etc...)
 
 **Please Note** - I don't monitor the forums for issues. If you would like some help or would like to see a new feature please email me at mike AT mde DASH dev.com. I will see what I can do to help.
+
+**If you ever need multiple events that is now available in the pro version of the plugin, found at - http://www.swimordiesoftware.com/downloads/rsvp-pro-plugin/**
 
 The admin functionality allows you to do the following things:
 
@@ -53,6 +55,16 @@ Available CSS Stylings:
 * rsvpAdditionalAttendeeQuestions - Class name for the div that wraps around all additional attendee questions
 * rsvpCustomQuestions - Class name for the div that wraps around all custom questions for each attendee
 
+Prefill Attendee:
+
+Go to the page associated with the RSVP form and add to the querystring the following parameters.
+
+* firstName - For the person's first name
+* lastName - For the person's last name
+* passcode - If passcode is enabled and/or required this will need to be added as well 
+
+For example if you have a page that is /rsvp for domain example.com your URL might look like - http://www.example.com/rsvp?firstName=test&lastName=test 
+
 == Installation ==
 
 1. Update the `rsvp` folder to the `/wp-content/plugins/` directory
@@ -74,6 +86,15 @@ I will see if I can get it added for you.
 1. The text you need to add for the rsvp front-end
 
 == Changelog ==
+
+= 1.9.5 = 
+* Fixed a bug when emailing people in certain cases it did not have all of the information it was looking for. Thanks to Guillaume De Smedt for pointing out the problem. 
+
+= 1.9.4 = 
+* Added the ability to skip the first step if the querystring parameters existed for the form values. 
+
+= 1.9.3 = 
+* Added shortcode [rsvp]
 
 = 1.9.2 = 
 * Fixed a bug that I introduced with the URL change in 1.9.1

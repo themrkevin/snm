@@ -67,7 +67,12 @@ function rsvp_frontend_handler($text) {
 				break;
 		}
 	} else {
-		return rsvp_handle_output($text, rsvp_frontend_greeting());
+    if(isset($_REQUEST['firstName']) && isset($_REQUEST['lastName'])) {
+      $output = "";
+      return rsvp_find($output, $text);
+    } else {
+      return rsvp_handle_output($text, rsvp_frontend_greeting());
+    }
 	}
 }
 
@@ -512,18 +517,18 @@ function rsvp_find(&$output, &$text) {
   $passcodeOptionEnabled = (rsvp_require_passcode()) ? true : false;
   $passcodeOnlyOption = (rsvp_require_only_passcode_to_register()) ? true : false;
 	
-	$_SESSION['rsvpFirstName'] = $_POST['firstName'];
-	$_SESSION['rsvpLastName'] = $_POST['lastName'];
+	//$_SESSION['rsvpFirstName'] = $_POST['firstName'];
+	//$_SESSION['rsvpLastName'] = $_POST['lastName'];
 	$passcode = "";
-	if(isset($_POST['passcode'])) {
-		$passcode = $_POST['passcode'];
-		$_SESSION['rsvpPasscode'] = $_POST['passcode'];
+	if(isset($_REQUEST['passcode'])) {
+		$passcode = $_REQUEST['passcode'];
+		//$_SESSION['rsvpPasscode'] = $_POST['passcode'];
 	}
+  
+	$firstName = $_REQUEST['firstName'];
+	$lastName = $_REQUEST['lastName'];
 				
-	$firstName = $_POST['firstName'];
-	$lastName = $_POST['lastName'];
-				
-	if(!$passcodeOnlyOption && ((strlen($_POST['firstName']) <= 1) || (strlen($_POST['lastName']) <= 1))) {
+	if(!$passcodeOnlyOption && ((strlen($_REQUEST['firstName']) <= 1) || (strlen($_REQUEST['lastName']) <= 1))) {
 		$output = "<p class=\"rsvpParagraph\" style=\"color:red\">".__("A first and last name must be specified", 'rsvp-plugin')."</p>\r\n";
 		$output .= rsvp_frontend_greeting();
 					
@@ -932,7 +937,7 @@ function rsvp_handlersvp(&$output, &$text) {
     $email = get_option(OPTION_NOTIFY_EMAIL);
     
 		if((get_option(OPTION_NOTIFY_ON_RSVP) == "Y") && ($email != "")) {
-			$sql = "SELECT firstName, lastName, rsvpStatus FROM ".ATTENDEES_TABLE." WHERE id= ".$attendeeID;
+			$sql = "SELECT firstName, lastName, rsvpStatus, kidsMeal, veggieMeal, note FROM ".ATTENDEES_TABLE." WHERE id= ".$attendeeID;
 			$attendee = $wpdb->get_results($sql);
 			if(count($attendee) > 0) {
 				$body = "Hello, \r\n\r\n";

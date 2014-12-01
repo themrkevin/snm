@@ -535,6 +535,15 @@ class BWGViewBWGShortcode {
                       </table>
                     </td>
                   </tr>
+                  <tr id="tr_slideshow_full_width_title">
+                    <td title="Display image title based on the slideshow dimensions." class="spider_label">
+                      <label>Full width title:</label>
+                    </td>
+                    <td>
+                      <input type="radio" name="slideshow_title_full_width" id="slideshow_title_full_width_1" value="1" <?php if ($option_row->slideshow_title_full_width) echo 'checked="checked"'; ?>  /><label for="slideshow_title_full_width_1">Yes</label>
+                      <input type="radio" name="slideshow_title_full_width" id="slideshow_title_full_width_0" value="0" <?php if (!$option_row->slideshow_title_full_width) echo 'checked="checked"'; ?>  /><label for="slideshow_title_full_width_0">No</label>
+                    </td>
+                  </tr>
                   <tr id="tr_slideshow_enable_description">
                     <td class="spider_label"><label>Enable Image Description: </label></td>
                     <td>
@@ -692,6 +701,13 @@ class BWGViewBWGShortcode {
                     <td>
                       <input type="radio" name="popup_info_always_show" id="popup_info_always_show_yes" value="1" <?php echo ($option_row->popup_info_always_show) ? 'checked="checked"' : ''; ?> /><label for="popup_info_always_show_yes">Yes</label>
                       <input type="radio" name="popup_info_always_show" id="popup_info_always_show_no" value="0" <?php echo ($option_row->popup_info_always_show) ? '' : 'checked="checked"'; ?> /><label for="popup_info_always_show_no">No</label>
+                    </td>
+                  </tr>
+                  <tr id="tr_popup_info_full_width">
+                    <td title="Display image information based on the lightbox dimensions." class="spider_label"><label>Full width info:</label></td>
+                    <td>
+                      <input type="radio" name="popup_info_full_width" id="popup_info_full_width_1" value="1" <?php if ($option_row->popup_info_full_width) echo 'checked="checked"'; ?>  /><label for="popup_info_full_width_1">Yes</label>
+                      <input type="radio" name="popup_info_full_width" id="popup_info_full_width_0" value="0" <?php if (!$option_row->popup_info_full_width) echo 'checked="checked"'; ?>  /><label for="popup_info_full_width_0">No</label>
                     </td>
                   </tr>
                   <tr id="tr_popup_enable_rate">
@@ -1107,7 +1123,7 @@ class BWGViewBWGShortcode {
                     jQuery("#compuct_album_view_type_1").attr('checked', 'checked');								  
                   }
                   else { 
-                    jQuery("#compuct_album_view_type_2").attr('checked', 'checked');
+                    jQuery("#compuct_album_view_type_0").attr('checked', 'checked');
                   }
                   break;
 
@@ -1205,6 +1221,12 @@ class BWGViewBWGShortcode {
                   }
                   else {
                     jQuery("#popup_info_no").attr('checked', 'checked');
+                  }
+				  if (short_code['popup_info_full_width'] == 1) {
+                    jQuery("#popup_info_full_width_1").attr('checked', 'checked');
+                  }
+                  else {
+                    jQuery("#popup_info_full_width_0").attr('checked', 'checked');
                   }
                   if (short_code['popup_info_always_show'] == 1 && short_code['popup_info_always_show']) {
                     jQuery("#popup_info_always_show_yes").attr('checked', 'checked');
@@ -1365,7 +1387,7 @@ class BWGViewBWGShortcode {
                 tagtext += ' image_enable_page="' + jQuery("input[name=image_enable_page]:checked").val() + '"';
                 tagtext += ' thumb_width="' + jQuery("#thumb_width").val() + '"';
                 tagtext += ' thumb_height="' + jQuery("#thumb_height").val() + '"';
-                title = ' gal_title="' + jQuery('#gallery option:selected').text().replace("'", "").replace('"', '') + '"';
+                title = ' gal_title="' + jQuery.trim(jQuery('#gallery option:selected').text().replace("'", "").replace('"', '')) + '"';
                 break;
 
               }
@@ -1384,11 +1406,12 @@ class BWGViewBWGShortcode {
                 tagtext += ' slideshow_filmstrip_height="' + jQuery("#slideshow_filmstrip_height").val() + '"';
                 tagtext += ' slideshow_enable_title="' + jQuery("input[name=slideshow_enable_title]:checked").val() + '"';
                 tagtext += ' slideshow_title_position="' + jQuery("input[name=slideshow_title_position]:checked").val() + '"';
+				tagtext += ' slideshow_title_full_width="' + jQuery("input[name=slideshow_title_full_width]:checked").val() + '"';  				
                 tagtext += ' slideshow_enable_description="' + jQuery("input[name=slideshow_enable_description]:checked").val() + '"';
                 tagtext += ' slideshow_description_position="' + jQuery("input[name=slideshow_description_position]:checked").val() + '"';
                 tagtext += ' enable_slideshow_music="' + jQuery("input[name=enable_slideshow_music]:checked").val() + '"';
                 tagtext += ' slideshow_music_url="' + jQuery("#slideshow_music_url").val() + '"';
-								title = ' gal_title="' + jQuery('#gallery option:selected').text().replace("'", "").replace('"', '') + '"';
+								title = ' gal_title="' + jQuery.trim(jQuery('#gallery option:selected').text().replace("'", "").replace('"', '')) + '"';
                 break;
 
               }
@@ -1401,7 +1424,7 @@ class BWGViewBWGShortcode {
                 tagtext += ' image_browser_width="' + jQuery("#image_browser_width").val() + '"';
                 tagtext += ' image_browser_title_enable="' + jQuery("input[name=image_browser_title_enable]:checked").val() + '"';
                 tagtext += ' image_browser_description_enable="' + jQuery("input[name=image_browser_description_enable]:checked").val() + '"';
-								title = ' gal_title="' + jQuery('#gallery option:selected').text().replace("'", "").replace('"', '') + '"';
+								title = ' gal_title="' + jQuery.trim(jQuery('#gallery option:selected').text().replace("'", "").replace('"', '')) + '"';
                 break;
 
               }
@@ -1423,7 +1446,7 @@ class BWGViewBWGShortcode {
                 tagtext += ' compuct_album_image_thumb_width="' + jQuery("#compuct_album_image_thumb_width").val() + '"';
                 tagtext += ' compuct_album_image_thumb_height="' + jQuery("#compuct_album_image_thumb_height").val() + '"';
                 tagtext += ' compuct_album_enable_page="' + jQuery("input[name=compuct_album_enable_page]:checked").val() + '"';
-								title = ' gal_title="' + jQuery('#album option:selected').text().replace("'", "").replace('"', '') + '"';
+								title = ' gal_title="' + jQuery.trim(jQuery('#album option:selected').text().replace("'", "").replace('"', '')) + '"';
                 break;
 
               }
@@ -1445,7 +1468,7 @@ class BWGViewBWGShortcode {
                 tagtext += ' extended_album_image_thumb_width="' + jQuery("#extended_album_image_thumb_width").val() + '"';
                 tagtext += ' extended_album_image_thumb_height="' + jQuery("#extended_album_image_thumb_height").val() + '"';
                 tagtext += ' extended_album_enable_page="' + jQuery("input[name=extended_album_enable_page]:checked").val() + '"';
-								title = ' gal_title="' + jQuery('#album option:selected').text().replace("'", "").replace('"', '') + '"';
+								title = ' gal_title="' + jQuery.trim(jQuery('#album option:selected').text().replace("'", "").replace('"', '')) + '"';
                 break;
 
               }
@@ -1466,6 +1489,7 @@ class BWGViewBWGShortcode {
               tagtext += ' popup_enable_fullscreen="' + jQuery("input[name=popup_enable_fullscreen]:checked").val() + '"';
               tagtext += ' popup_enable_info="' + jQuery("input[name=popup_enable_info]:checked").val() + '"';
               tagtext += ' popup_info_always_show="' + jQuery("input[name=popup_info_always_show]:checked").val() + '"';
+			  tagtext += ' popup_info_full_width="' + jQuery("input[name=popup_info_full_width]:checked").val() + '"';
               tagtext += ' popup_enable_rate="' + jQuery("input[name=popup_enable_rate]:checked").val() + '"';
               tagtext += ' popup_enable_comment="' + jQuery("input[name=popup_enable_comment]:checked").val() + '"';
               tagtext += ' popup_hit_counter="' + jQuery("input[name=popup_hit_counter]:checked").val() + '"';
