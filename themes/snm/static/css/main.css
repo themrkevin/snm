@@ -96,8 +96,30 @@ img {
 }
 
 .main {
-  background: #000;
-  padding: 100px 0;
+  padding: 93px 0;
+  position: relative;
+}
+
+.main:before {
+  content: '';
+  background: url('../img/corkboard-border.jpg');
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 93px;
+  width: 100%;
+}
+
+.main:after {
+  content: '';
+  background: url('../img/corkboard-border.jpg') repeat-x;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 93px;
+  width: 100%;
 }
 
 .board {
