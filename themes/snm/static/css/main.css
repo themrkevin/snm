@@ -1,0 +1,176 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: url("../img/site-bg.jpg") center center;
+  padding-bottom: 100px;
+  font-family: Georgia, serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.header {
+  text-align: center;
+  position: relative;
+}
+
+.flag {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -148px;
+  z-index: 100;
+}
+
+.nav-toggle {
+  display: block;
+  float: left;
+  margin-top: 30px;
+  padding: 7px 15px;
+  font-size: 20px;
+  background: orange;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-box-shadow: 0px 2px 15px 2px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 2px 15px 2px rgba(0,0,0,0.5);
+  box-shadow: 0px 2px 15px 2px rgba(0,0,0,0.5);
+}
+
+.main-nav {
+  background: #555;
+  height: 100px;
+  -webkit-box-shadow: 0px 2px 25px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 25px 2px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 25px 2px rgba(0,0,0,0.75);
+}
+
+.main-nav ul {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav li {
+  display: inline-block;
+}
+
+.main-nav li a {
+  display: block;
+  cursor: pointer;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.header-img {
+  margin: 45px 10px 25px;
+  position: relative;
+}
+
+.header-img.pinned:before {
+  left: 5px;
+}
+
+.header-img img {
+  border: 8px solid #fff;
+  background: #000;
+  width: 100%;
+}
+
+.logo {
+  position: absolute;
+  bottom: -90px;
+  width: 100%;
+  z-index: 100;
+}
+
+.main {
+  background: #000;
+  padding: 100px 0;
+}
+
+.board {
+  background: url("../img/cork-bg.jpg") center center;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.board:before {
+  content: "";
+  background: url("../img/puzzle-piece.png") top center no-repeat;
+  width: 111px;
+  height: 99px;
+  display: block;
+  position: absolute;
+  top: -55px;
+  left: 50%;
+  margin-left: -55px;
+  z-index: 100;
+}
+
+.board:after {
+  content: "";
+  background: url("../img/mask.png") top center no-repeat;
+  background-size: contain;
+  width: 273px;
+  height: 195px;
+  display: block;
+  position: absolute;
+  bottom: -165px;
+  left: 50%;
+  margin-left: -136px;
+  z-index: 100;
+}
+
+.board-header {
+  background: url("../img/spider-web.png") top left no-repeat;
+  padding: 40px 20px 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.board-header h1 {
+  background: orange;
+  padding: 20px;
+  margin: 0;
+}
+
+.main-content {
+  background: #f8f8f8;
+  margin: 10px 20px 40px;
+  padding: 15px;
+}
+
+.pinned {
+  -webkit-box-shadow: 0px 2px 25px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 25px 2px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 25px 2px rgba(0,0,0,0.75);
+  position: relative;
+}
+
+.pinned:before, .pinned:after {
+  content: "";
+  background: url("../img/pushpin.png") no-repeat;
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -5px;
+  left: 0;
+}
+
+.pinned:after {
+  left: auto;
+  right: -5px;
+}
