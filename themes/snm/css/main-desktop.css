@@ -1,0 +1,16 @@
+@media (min-width: 960px) {
+  .contained {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .registries p {
+    width: 50%;
+    float: left;
+  }
+
+  .registries a {
+    margin: 10px 15px 40px;
+  }
+}

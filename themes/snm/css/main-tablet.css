@@ -1,0 +1,90 @@
+@media (min-width: 768px) {
+  .header {
+    z-index: 20000;
+  }
+
+  .main {
+    padding: 93px;
+    margin: 0 10px;
+  }
+
+  .main:before {
+    z-index: 10000;
+  }
+
+  .main:after {
+    z-index: 10000;
+  }
+
+  .board {
+    z-index: 12000;
+  }
+
+  .board:before {
+    left: 100%;
+  }
+
+  .board:after {
+    top: -131px;
+    left: 14px;
+    transform: rotate(-25deg);
+    max-width: 215px;
+    transform: rotate(-25deg);
+  }
+
+  .board-header {
+    padding: 50px 30px 20px;
+  }
+
+  .main-content {
+    margin: 20px 30px 50px;
+  }
+
+  .gross-border {
+    background: url('../img/corkboard-border-v.jpg');
+    width: 93px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 11000;
+  }
+
+  .border-left {
+    left: 0;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  .border-right {
+    right: 0;
+  }
+
+  .gross-border:before, 
+  .gross-border:after {
+    content: '';
+    background: url('../img/corkboard-corners.jpg');
+    position: absolute;
+    height: 93px;
+    width: 93px;
+  }
+
+  .gross-border:before {
+    top: 0;
+    background-position: top right;
+  }
+
+  .gross-border:after {
+    bottom: 0;
+    background-position: bottom right;
+  }
+
+  .topic {
+    margin: 20px 30px 40px;
+  }
+
+  .topic-img {
+    margin: 30px 30px 40px;
+  }
+}

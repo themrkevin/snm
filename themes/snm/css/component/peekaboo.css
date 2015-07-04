@@ -1,0 +1,35 @@
+[data-peeka] {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  height: 100%;
+}
+
+[data-peeka="boo"] {
+  padding-bottom: 35px;
+}
+
+[data-peeka] p {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+[data-peeka="boo"] p {
+  height: 100%;
+  opacity: 1;
+}
+
+.peekabutton {
+  border: none;
+  background: transparent;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

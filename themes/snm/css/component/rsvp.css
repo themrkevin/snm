@@ -1,0 +1,51 @@
+.rsvp-container {
+}
+
+.rsvp-form-container {
+  margin: 30px auto 0;
+  max-width: 100%;
+  width: 520px;
+}
+
+.rsvp-container label {
+  font-weight: bold;
+}
+
+.rsvp-container input[type="text"], 
+.rsvp-container textarea {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+  padding: 15px;
+  border: none;
+  color: #777;
+}
+
+.rsvp-container input[type="submit"] {
+  background-color: navy;
+  width: 100%;
+  padding: 15px;
+  display: block;
+  border-radius: 4px;
+  border: none;
+  color: #ccc;
+}
+
+.rsvp-container input[type="radio"],
+.rsvp-container input[type="checkbox"] {
+  display: inline-block;
+  margin: 0 2px 0 10px;
+}
+
+.rsvpAdditionalAttendee {
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 4px;
+  background-color: #eeb8a2;
+  color: #fff;
+}
+
+.rsvpCheckboxCustomQ {
+  float: none;
+  display: block;
+}
