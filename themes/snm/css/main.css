@@ -8,6 +8,10 @@ html {
   box-sizing: inherit;
 }
 
+:focus {
+  outline: none;
+}
+
 body {
   background: url("../img/site-bg.jpg") center center;
   padding-bottom: 100px;
@@ -16,12 +20,14 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
 .header {
   text-align: center;
   position: relative;
+  margin-bottom: 50px;
 }
 
 .flag {
@@ -79,6 +85,9 @@ img {
   left: 0;
   height: 93px;
   width: 100%;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .board {
@@ -125,12 +134,50 @@ img {
   background: #eeb8a2;
   padding: 20px;
   margin: 0;
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
 .main-content {
   background: #f8f8f8;
   margin: 10px 20px 40px;
   padding: 15px;
+}
+
+.topic-title {
+  text-transform: uppercase;
+  font-weight: normal;
+  text-align: center;
+}
+
+.with-subtitle {
+  border-bottom: 1px solid;
+  padding-bottom: 20px;
+}
+
+.topic-subtitle {
+  color: #eeb8a2;
+  font-size: 14px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.topic-img {
+  margin: 20px 20px 30px;
+  padding: 2px;
+  background-color: #fff;
+}
+
+.topic {
+  background: #f8f8f8;
+  color: #777;
+  margin: 10px 20px 30px;
+  padding: 15px 33px;
+}
+
+.topic p {
+  line-height: 2em;
 }
 
 .pinned {
@@ -155,3 +202,22 @@ img {
   left: auto;
   right: -5px;
 }
+
+.pinned.single-pin:before {
+  top: -11px;
+  left: 51%;
+}
+
+.pinned.single-pin:after {
+  display: none;
+}
+
+.registry-link {
+  display: block;
+  background-color: #fff;
+}
+
+.registry-link img {
+  margin: 0 auto;
+}
+

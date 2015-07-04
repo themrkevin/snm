@@ -13,23 +13,26 @@
 
 <body <?php body_class(); ?>>
   <header class="header">
-    <img class="flag" src="<?php bloginfo('template_url'); ?>/img/nav-center-img.png" />
     <?php if(has_nav_menu('main')): ?>
       <nav class="main-nav">
+        <img class="flag" src="<?php bloginfo('template_url'); ?>/img/nav-center-img.png" />
         <a href="#" class="nav-toggle">Menu</a>
-        <div id="main-nav-container" class="main-nav-container">
+        <div id="main-nav-container" class="main-nav-container contained">
           <span class="label">Menu</span>
           <?php 
             wp_nav_menu(array(
               'theme_location' => 'main',
               'container' => '',
+              'menu_class' => 'menu clearfix',
             ));
           ?>
         </div>
       </nav>
     <?php endif; ?>
-    <div class="header-img pinned">
+  <?php if(is_home()) : ?>
+    <div class="header-img pinned contained">
     <img src="<?php bloginfo('template_url'); ?>/img/main.jpg" />
     </div>
-    <img class="logo" src="<?php bloginfo('template_url'); ?>/img/sam-mark-married-banner.png" />
+    <img class="logo contained" src="<?php bloginfo('template_url'); ?>/img/sam-mark-married-banner.png" />
+  <?php endif; ?>
   </header>
