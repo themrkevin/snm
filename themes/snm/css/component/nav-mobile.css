@@ -67,6 +67,7 @@
   }
 
   .main-nav-container {
+    background: #555;
     display: none;
     position: fixed;
     top: 0;

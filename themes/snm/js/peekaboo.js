@@ -5,6 +5,7 @@ $(function() {
   var viewText = 'Read More';
   var hideText = 'Close';
   var peekaButton = '<button class="peekabutton">'+viewText+'</button>';
+  var $content = $peekaboo.find('p');
   var $peekabutton;  
   
   $peekaboo.append(peekaButton);
