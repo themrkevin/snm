@@ -58,6 +58,10 @@ img {
   bottom: -90px;
   width: 100%;
   z-index: 100;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  transform: translate(-50%);
 }
 
 .main {
@@ -148,6 +152,26 @@ img {
   text-transform: uppercase;
   font-weight: normal;
   text-align: center;
+}
+
+.topic-title span {
+  display: block;
+}
+
+.sponsor-box .topic-title {
+  font-size: 17px;
+}
+
+.honoraries .topic-title b {
+  font-weight: normal;
+  font-size: 12px;
+  text-transform: initial;
+}
+
+.kid-sponsors .topic-subtitle b {
+  font-weight: normal;
+  color: #777;
+  display: block;
 }
 
 .with-subtitle {

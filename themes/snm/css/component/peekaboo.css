@@ -7,6 +7,10 @@
   overflow: hidden;
 }
 
+.kid-sponsors {
+  max-height: 235px;
+}
+
 [data-peeka="boo"] {
   max-height: 9999px;
 }

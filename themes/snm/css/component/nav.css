@@ -24,6 +24,10 @@
   display: inline-block;
 }
 
+.main-nav li:not(:first-child) {
+  display: none;
+}
+
 .main-nav li a {
   display: block;
   cursor: pointer;

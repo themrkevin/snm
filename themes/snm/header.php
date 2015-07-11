@@ -29,9 +29,9 @@
         </div>
       </nav>
     <?php endif; ?>
-  <?php if(is_home()) : ?>
+  <?php if(is_front_page()) : ?>
     <div class="header-img pinned contained">
-    <img src="<?php bloginfo('template_url'); ?>/img/main.jpg" />
+    <img src="<?php bloginfo('template_url'); ?>/img/photos/sam-and-mark-autumn-engagement-046.jpg" />
     </div>
     <img class="logo contained" src="<?php bloginfo('template_url'); ?>/img/sam-mark-married-banner.png" />
   <?php endif; ?>
